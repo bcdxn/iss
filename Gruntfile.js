@@ -26,7 +26,7 @@ module.exports = function (grunt) {
     copy: {
       main: {
         expand: true,
-        src: 'js/lib/*.js',
+        src: 'js/lib/**/*.js',
         dest: 'dist/',
         flatten: true,
         filter: 'isFile',
@@ -34,7 +34,7 @@ module.exports = function (grunt) {
     },
     // Watch for changes
     watch: {
-      files: ['css/*', 'js/*'],
+      files: ['css/*', 'js/**/*'],
       tasks: ['cssmin', 'browserify:dev', 'copy']
     }
   });
