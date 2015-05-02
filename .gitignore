@@ -1,0 +1,8 @@
+# NPM Dependencies
+**/node_modules/
+
+# Files created by Grunt
+**/dist/
+
+# Used for typing by Visual Studio Code
+**/typings/
