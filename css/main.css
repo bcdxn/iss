@@ -679,6 +679,7 @@
     
       .experience-img {
         height: 275px;
+        margin-bottom: 20px;
         overflow: hidden;
       }
     
@@ -707,13 +708,92 @@
         
         .experience-img {
           height: 350px;
+          margin: 0;
           padding-left: 10px;
           text-align: left;
         }
         
         .experience-img img {
           height: 100%;
-          padding: 0;
+          padding: 20px;
+          width: auto;
+        }
+      }
+      
+    /* Technology Section
+    ------------------------------------------------------------------------------*/
+      .tech-wrapper {
+        border-bottom: 1px solid #ddd;
+        height: auto;
+      }
+    
+      .tech-txt-wrapper {
+        display: table;
+        height: 100%;
+        position: relative;
+      }
+      .tech-txt {
+        display: table-cell;
+        height: 100%;
+        vertical-align: middle;
+      }
+      .tech-txt h3 {
+        color: #333;
+        font-size: 26px;
+        margin-top: 40px;
+        padding: 0 20px;
+        text-align: center;
+      }
+    
+      .tech-txt p {
+        color: #606162;
+        font-size: 18px;
+        line-height: 1.3;
+        margin-bottom: 0;
+        margin-top: 20px;
+        padding: 0 20px;
+        text-align: center;
+      }
+    
+      .tech-img {
+        height: 275px;
+        margin-bottom: 20px;
+        overflow: hidden;
+      }
+    
+    
+      .tech-img img {
+        height: auto;
+        padding: 40px 20px 0 20px;
+        position: relative;
+        width: 100%;
+      }
+    
+      /* >= Medium Screen */
+      @media (min-width: 768px) {
+        .tech-wrapper { height: 350px; }
+    
+        .tech-txt h3 {
+          margin-top: 0px;
+          padding-right: 10px;
+          text-align: left;
+        }
+    
+        .tech-txt p {
+          padding-right: 10px;
+          text-align: left;
+        }
+        
+        .tech-img {
+          height: 350px;
+          margin: 0;
+          padding-left: 10px;
+          text-align: left;
+        }
+        
+        .tech-img img {
+          height: 100%;
+          padding: 20px;
           width: auto;
         }
       }
