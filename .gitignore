@@ -6,3 +6,6 @@
 
 # Used for typing by Visual Studio Code
 **/typings/
+
+# Something keeps adding Thumbs.db... stahp
+**/Thumbs.db
