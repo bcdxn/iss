@@ -51,7 +51,6 @@
     background-image: url(../img/workshop-shopped.jpg);
     background-position: center center;
     background-size: cover;
-    border-top: 2px solid #ee4938;
     min-height: 400px;
     opacity: 0;
     position: relative;
@@ -59,7 +58,7 @@
     width: 100%;
   }
 
-  .hero {
+  .landing.hero {
     display: table;
     height: 100%;
     left: 0;
@@ -107,6 +106,7 @@
 /* Header
 ------------------------------------------------------------------------------*/
   header {
+    border-top: 2px solid #ee4938;
     height: 60px;
     left: 0;
     line-height: 60px;
@@ -545,3 +545,85 @@
     color: #606162;
     font-size: 14px;
   }
+ 
+/* About
+------------------------------------------------------------------------------*/
+
+  /* Header
+  ------------------------------------------------------------------------------*/
+    .about-header {
+      left: 0;
+      position: absolute;
+      top: 0;
+    }
+    .about.global-nav .page-link a { color: #606162; }
+    .about.global-nav .page-link a:hover { color: #ee4938; }
+  
+  /* Hero
+  ------------------------------------------------------------------------------*/
+    .about.hero-wrapper {
+      background: #fff;
+      opacity: 1.0;
+    }
+    
+    .about.hero-img-wrapper {
+      display: table;
+      height: 500px;
+      width: 100%;
+    }
+    
+    .about.hero-img {
+      display: table-cell;
+      height: 100%;
+      vertical-align: middle;
+    }
+    
+    .about.hero-img > img {
+      margin: auto;
+      max-width: 390px;
+      width: 100%;
+    }
+    
+    .about-intro-wrapper {
+      background: #f5f8fa;
+      border-bottom: 1px solid #ddd;
+      border-top: 1px solid #ddd;
+      min-height: 350px;
+    }
+    
+    .about-intro-wrapper h1 {
+      color: #333;
+      font-size: 26px;
+      margin-top: 60px;
+      padding: 0 20px;
+      text-align: center;
+    }
+    
+    .about-intro-text > p {
+      color: #606162;
+      font-size: 20px;
+      line-height: 1.5;
+      margin-bottom: 0;
+      margin: auto;
+      max-width: 740px;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    
+    .about-intro-text > p:last-child {
+      padding-top: 0;
+    }
+    
+    .product-list-link,
+    .product-list-link:hover {
+      color: #ee4938;
+      line-height: 1.5em;
+      text-decoration: underline;
+    }
+    
+    
+    @media (min-width: 768px) {
+      .about-intro-text > p {
+        text-align: left;
+      }
+    }
