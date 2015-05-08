@@ -34,7 +34,7 @@ module.exports = function (grunt) {
     },
     // Watch for changes
     watch: {
-      files: ['css/*', 'js/**/*'],
+      files: ['css/**/*.css', 'js/**/*.js'],
       tasks: ['cssmin', 'browserify:dev', 'copy']
     }
   });

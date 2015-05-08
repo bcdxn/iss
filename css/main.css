@@ -30,6 +30,7 @@
   }
 
   .section-content {
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
     height: 100%;
     margin: auto;
     max-width: 1024px;
@@ -40,6 +41,7 @@
   .btn {
     border: none;
     border-radius: 4px;
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
     font-size: 18px;
     outline: none;
     padding: 5px 10px;
@@ -107,6 +109,7 @@
 ------------------------------------------------------------------------------*/
   header {
     border-top: 2px solid #ee4938;
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
     height: 60px;
     left: 0;
     line-height: 60px;
@@ -125,6 +128,7 @@
   
   .landing-link {
     float: left;
+    padding: 5px;
     width: 60px;
   }
   
@@ -147,7 +151,7 @@
   .page-link a {
     color: #fff;
     font-family: 'Roboto-Light';
-    font-size: 18px;
+    font-size: 24px;
     padding: 0 20px;
     transition: color 0.2s linear;
   }
@@ -175,7 +179,7 @@
   }
   
   .sticky-header .landing-link {
-    padding-top: 5px; 
+    padding-top: 15px; 
   }
 
   .sticky-header .page-link a { color: #606162; }
@@ -189,7 +193,10 @@
     width: 100%;
   }
 
-  .sticky-header .page-link a { line-height: 70px; }
+  .sticky-header .page-link a {
+    font-size: 18px;
+    line-height: 80px;
+   }
 
 /* Intro Section
 ------------------------------------------------------------------------------*/
@@ -561,6 +568,8 @@
     color: #606162;
     font-size: 14px;
   }
+  
+  footer .page-link a:visited { color: #606162; }
  
 /* About
 ------------------------------------------------------------------------------*/
@@ -723,7 +732,6 @@
     /* Technology Section
     ------------------------------------------------------------------------------*/
       .tech-wrapper {
-        border-bottom: 1px solid #ddd;
         height: auto;
       }
     
