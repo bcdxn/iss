@@ -46,6 +46,6 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   grunt.registerTask('default', ['watch']);
-  grunt.registerTask('dev', ['cssmin', 'browserify:dev']);
+  grunt.registerTask('dev', ['cssmin', 'browserify:dev', 'copy']);
   grunt.registerTask('release', ['cssmin', 'browserify:release', 'copy']);
 };
