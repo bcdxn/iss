@@ -51,11 +51,12 @@
   a:hover { text-decoration: none; }
   a:visited { text-decoration: none; }
   a:active { text-decoration: none; }
+  
+  .em { font-weight: bold; }
 
 /* Hero
 ------------------------------------------------------------------------------*/
   .hero-wrapper {
-    /*background-image: url(../img/workshop-shopped.jpg);*/
     background-image: url(../img/downtown-raleigh.jpg);
     background-position: center center;
     background-size: cover;
@@ -82,10 +83,19 @@
     vertical-align: middle;
     width: 100%;
   }
+  
+  .hero-logo h2 {
+    color: #fff;
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
+    font-size: 24px;
+    padding: 40px 0;
+    text-align: center;
+    text-shadow: 0px 1px 10px rgba(0,0,0,1)
+  }
 
   .hero-logo img {
     margin: auto;
-    max-width: 500px;
+    max-width: 400px;
     padding: 0 20px;
     width: 100%;
   }
@@ -265,7 +275,6 @@
       background: none;
       border: none;
       display: inline;
-      widows: auto;
     }
     
     .page-link a {
@@ -276,7 +285,8 @@
       transition: color 0.2s linear;
     }
     
-    .page-link a:visited { color: #fff; text-decoration: none; }
+    .page-link a:visited { color: #fff; }
+    .page-link a:hover { color: #ee4938; }
     
     .hamburger-btn { display: none; }
   }
@@ -294,35 +304,36 @@
 
 /* Local Nav Header
 ------------------------------------------------------------------------------*/
-  .local-nav-header {
+  .sticky-header {
+    background: rgba(255, 255, 255, 0.95);
     border-bottom: 1px solid #ddd;
     display: none;
     height: 81px;
   }
   
-  .local-nav-header .landing-link {
+  .sticky-header .landing-link {
     padding-top: 15px; 
   }
 
-  .local-nav-header .page-link a { color: #606162; }
-  .local-nav-header .page-link a:visited { color: #606162; text-decoration: none; }
-  .local-nav-header .page-link a:hover { color: #ee4938; }
+  .sticky-header .page-link a { color: #606162; }
+  .sticky-header .page-link a:visited { color: #606162; text-decoration: none; }
+  .sticky-header .page-link a:hover { color: #ee4938; }
 
-  .local-nav-header nav {
+  .sticky-header nav {
     height: 100%;
     margin: auto;
     max-width: 1024px;
     width: 100%;
   }
 
-  .local-nav-header .page-link a {
+  .sticky-header .page-link a {
     font-size: 18px;
     line-height: 80px;
    }
    
    /* >= Medium Screen */
   @media (min-width: 768px) {
-    .local-nav-header {
+    .sticky-header {
       display: block;
     }
   }
@@ -659,47 +670,46 @@
   footer  {
     background: #f0f0f0;
     box-shadow: inset 0px 1px 1px 0px rgba(0,0,0,0.15);
+    color: #333;
     padding: 40px 20px 60px 20px;
     width: 100%;
   }
-
+  
   .footer-logo {
-    height: 60px;
-    margin: auto;
-    width: 60px;
-  }
-
-  .footer-logo img {
+    height: auto;
+    margin: 20px 0;
+    max-width: 300px;
+    padding: 0 10px 0 0;
     width: 100%;
-  }
-
-  footer .motd {
-    color: #606162;
-    font-family: 'Roboto-Light';
-    font-size: 14px;
-    margin-top: 15px;
-    text-align: center;
-  }
-
-  footer .global-nav {
-    margin: auto;
-    max-width: 1024px;
-    text-align: center;
-    padding: 30px 0 0 0;
-    width: 100%;
-  }
-
-  footer .global-nav ul {
-    margin: 0;
-    padding: 0;
-  }
-
-  footer .page-link a {
-    color: #606162;
-    font-size: 14px;
   }
   
-  footer .page-link a:visited { color: #606162; }
+  .footer-nav .page-link { padding: 0 10px; };
+  .footer-nav .page-link:hover  { color: #ee4938; }
+  .footer-nav .page-link:first-child { padding-left: 0; }
+  
+  .footer-nav-border {
+    background-image: -webkit-linear-gradient(left, #ddd, #ddd 45%, #ddd 55%, #f0f0f0);
+    background-image: linear-gradient(to right, #ddd, #ddd 45%, #ddd 55%, #f0f0f0);
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    color: #f0f0f0;
+    height: 1px;
+    margin: 20px 0;
+    width: 100%;
+  }
+  
+  .copyright {
+    color: #888;
+    font-family: 'Roboto Light';
+  }
+  
+  @media (min-width: 768px) {
+    .footer-logo {
+      height: 24px;
+      padding: 0;
+      width: auto;
+    }
+  }
  
 /* About
 ------------------------------------------------------------------------------*/

@@ -12,10 +12,15 @@ $(document).ready(function () {
 
   // Sticky Title
   if ($('#productTitle').length > 0) {
+    $('.sticky-header').fixTo('body', {
+      top: 0,
+      zIndex: 3
+    });
     $('#productTitle').fixTo('.products-wrapper', {
       className : 'sticky-title',
       top: 0,
-      zIndex: 2
+      zIndex: 2,
+      mind: '.sticky-header'
     });
   }
   
