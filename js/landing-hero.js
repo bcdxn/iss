@@ -3,8 +3,8 @@
 var LandingHero = {};
 
 LandingHero.init = function () {
-  if ($('.hero-wrapper').length > 0) {
-    LandingHero.$hero = $('.hero-wrapper');
+  if ($('.landing.hero-wrapper').length > 0) {
+    LandingHero.$hero = $('.landing.hero-wrapper');
 
     _initHeight(LandingHero.$hero);
     LandingHero.$hero.css('opacity', '1.0');

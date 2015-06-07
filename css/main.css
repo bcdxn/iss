@@ -153,7 +153,7 @@
   
   .pages:before {
       border: solid transparent;
-      border-bottom-color: rgba(255,255,255,0.8);
+      border-bottom-color: rgba(255,255,255,0.9);
       border-width: 8px;
       color: #fff;
       content: "";
@@ -180,9 +180,24 @@
   }
   
   header .page-link {
-    background: rgba(255, 255, 255, 0.8);
     border-bottom: 1px solid #ccc;
     width: 100%;
+  }
+  
+  .landing-header .page-link {
+    background: rgba(255, 255, 255, 0.9);
+  }
+  
+  .about-header .page-link {
+    background: rgba(240, 240, 240, 0.95);
+  }
+  
+  header .page-link:last-child {
+    border-bottom: none;
+  }
+  
+  .about-header .pages:before {
+    border-bottom-color: rgba(240,240,240,0.95);
   }
   
   .page-link a {
@@ -209,10 +224,18 @@
   }
   
   .hamburger-btn > .octicon {
-    color: #fff;
     font-size: 30px;
     line-height: 30px;
   }
+  
+  .landing-header .hamburger-btn > .octicon {
+    color: #fff;
+  }
+  
+  .about-header .hamburger-btn > .octicon {
+    color: #333;
+  }
+  
   
   /* >= Medium Screen */
   @media (min-width: 768px) {
@@ -236,7 +259,8 @@
       display:table;
       clear:both;
     }
-    header .page-link,
+    header.about-header .page-link,
+    header.landing-header .page-link,
     .page-link {
       background: none;
       border: none;
