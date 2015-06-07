@@ -46,11 +46,17 @@
     outline: none;
     padding: 5px 10px;
   }
+  
+  a { text-decoration: none; }
+  a:hover { text-decoration: none; }
+  a:visited { text-decoration: none; }
+  a:active { text-decoration: none; }
 
 /* Hero
 ------------------------------------------------------------------------------*/
   .hero-wrapper {
-    background-image: url(../img/workshop-shopped.jpg);
+    /*background-image: url(../img/workshop-shopped.jpg);*/
+    background-image: url(../img/downtown-raleigh.jpg);
     background-position: center center;
     background-size: cover;
     min-height: 400px;
@@ -127,7 +133,6 @@
   }
   
   .landing-link {
-    float: left;
     padding: 5px;
     width: 60px;
   }
@@ -135,30 +140,122 @@
   .landing-link img {
     width: 100%;
   }
-
+  
   .pages {
-    float: right;
+    display: block;
+    position: relative;
+    top: -10px;
+    height: 0;
+    opacity: 0;
+    transition: all linear 0.1s;
+    width: 100%;
   }
-
-  .pages ul:after {
-    content:"";
-    display:table;
-    clear:both;
+  
+  .pages:before {
+      border: solid transparent;
+      border-bottom-color: rgba(255,255,255,0.8);
+      border-width: 8px;
+      color: #fff;
+      content: "";
+      display: block;
+      max-height: 0;
+      opacity: 0;
+      position: absolute;
+      right: 20px;
+      top: -16px;
+      white-space: pre;
+      width: 0;
+      word-wrap: break-word;
+      z-index: 1001;
   }
-
-  .page-link { display: inline; }
-
+  
+  .active.pages {
+    max-height: 600px;
+    opacity: 1.0;
+    top: 0;
+  }
+  
+  .active.pages:before {
+    opacity: 1.0;
+  }
+  
+  header .page-link {
+    background: rgba(255, 255, 255, 0.8);
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+  }
+  
   .page-link a {
-    color: #fff;
+    color: #333;
     font-family: 'Roboto-Light';
     font-size: 24px;
-    padding: 0 20px;
+    padding: 20px;
     transition: color 0.2s linear;
   }
+  
   .page-link:first-child { padding-left: 0; }
   .page-link:last-child { padding-right: 0; }
-  .page-link a:visited { color: #fff; text-decoration: none; }
-  .page-link a:hover { color: #ee4938; }
+  .page-link a:visited { color: #333; text-decoration: none; }
+  .page-link a:hover { color: #ee4938; text-decoration: none; }
+  
+  .hamburger-btn {
+    cursor: pointer;
+    height: 30px;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    width: 30px;
+    z-index: 3;
+  }
+  
+  .hamburger-btn > .octicon {
+    color: #fff;
+    font-size: 30px;
+    line-height: 30px;
+  }
+  
+  /* >= Medium Screen */
+  @media (min-width: 768px) {
+    .landing-link {
+      float: left;
+    }
+    
+    .pages {
+      float: right;
+      max-height: 500px;
+      opacity: 1.0;
+      top: 0;
+      transition: none;
+      width: auto;
+    }
+    
+    .pages:before { display: none; }
+  
+    .pages ul:after {
+      content:"";
+      display:table;
+      clear:both;
+    }
+    header .page-link,
+    .page-link {
+      background: none;
+      border: none;
+      display: inline;
+      widows: auto;
+    }
+    
+    .page-link a {
+      color: #fff;
+      font-family: 'Roboto-Light';
+      font-size: 24px;
+      padding: 0 20px;
+      transition: color 0.2s linear;
+    }
+    
+    .page-link a:visited { color: #fff; text-decoration: none; }
+    
+    .hamburger-btn { display: none; }
+  }
 
   a {
     color: inherit;
@@ -171,32 +268,40 @@
   a:focus   { outline: none; }
   a:hover   { outline: none; text-decoration: none; }
 
-/* Sticky Header
+/* Local Nav Header
 ------------------------------------------------------------------------------*/
-  .sticky-header {
+  .local-nav-header {
     border-bottom: 1px solid #ddd;
+    display: none;
     height: 81px;
   }
   
-  .sticky-header .landing-link {
+  .local-nav-header .landing-link {
     padding-top: 15px; 
   }
 
-  .sticky-header .page-link a { color: #606162; }
-  .sticky-header .page-link a:visited { color: #606162; text-decoration: none; }
-  .sticky-header .page-link a:hover { color: #ee4938; }
+  .local-nav-header .page-link a { color: #606162; }
+  .local-nav-header .page-link a:visited { color: #606162; text-decoration: none; }
+  .local-nav-header .page-link a:hover { color: #ee4938; }
 
-  .sticky-header nav {
+  .local-nav-header nav {
     height: 100%;
     margin: auto;
     max-width: 1024px;
     width: 100%;
   }
 
-  .sticky-header .page-link a {
+  .local-nav-header .page-link a {
     font-size: 18px;
     line-height: 80px;
    }
+   
+   /* >= Medium Screen */
+  @media (min-width: 768px) {
+    .local-nav-header {
+      display: block;
+    }
+  }
 
 /* Intro Section
 ------------------------------------------------------------------------------*/
@@ -304,7 +409,8 @@
   .quote-wrapper blockquote {
     color: #333;
     font-size: 28px;
-    margin-top: 24px 40px;  
+    margin: 24px 0;
+    padding: 0 20px;
   }
 
   .quote-wrapper .octicon-quote {
@@ -397,7 +503,7 @@
     font-size: 26px;
     line-height: 1.5em;
     margin-top: 0px;
-    padding: 26px 20px 0 20px;
+    padding: 26px 20px;
     position: relative;
     text-align: center;
     top: -0.25em;
