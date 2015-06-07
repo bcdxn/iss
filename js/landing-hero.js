@@ -3,14 +3,16 @@
 var LandingHero = {};
 
 LandingHero.init = function () {
-  LandingHero.$hero = $('.hero-wrapper');
+  if ($('.hero-wrapper').length > 0) {
+    LandingHero.$hero = $('.hero-wrapper');
 
-  _initHeight(LandingHero.$hero);
-  LandingHero.$hero.css('opacity', '1.0');
-
-  $(window).on('resize', function () {
     _initHeight(LandingHero.$hero);
-  });
+    LandingHero.$hero.css('opacity', '1.0');
+  
+    $(window).on('resize', function () {
+      _initHeight(LandingHero.$hero);
+    });
+  }
 };
 
 function _initHeight($hero) {

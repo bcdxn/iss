@@ -2,10 +2,13 @@
 
 'use strict';
 
-var LandingHero  = require('./landing-hero');
+var LandingHero = require('./landing-hero'),
+    Header      = require('./header');
 
 $(document).ready(function () {
   LandingHero.init();
+  Header.init();
+  
 
   // Sticky Title
   $('#productTitle').fixTo('.products-wrapper', {
