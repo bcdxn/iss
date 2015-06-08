@@ -6,6 +6,8 @@ var LandingHero = require('./landing-hero'),
     Header      = require('./header');
 
 $(document).ready(function () {
+  var map, marker, latLng;
+  
   LandingHero.init();
   Header.init();
   
@@ -42,6 +44,21 @@ $(document).ready(function () {
       '$parent': $('.clients-wrapper'),
       'side': 'top',
       'startPct': -50
+    });
+  }
+  
+  // Contact Page
+  if ($('#map-canvas').length > 0) {
+    latLng = { lat: 35.773853, lng: -78.637281}
+    map = new google.maps.Map(document.getElementById('map-canvas'), {
+      center: latLng,
+      zoom: 17
+    });
+    
+    marker = new google.maps.Marker({
+      position: latLng,
+      map: map,
+      title: 'Innovative Sign Systems'
     });
   }
 

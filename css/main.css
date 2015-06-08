@@ -198,16 +198,18 @@
     background: rgba(255, 255, 255, 0.9);
   }
   
+  .contact-header .page-link,
   .about-header .page-link {
-    background: rgba(240, 240, 240, 0.95);
+    background: rgba(220, 220, 220, 0.95);
   }
   
   header .page-link:last-child {
     border-bottom: none;
   }
   
+  .contact-header .pages:before,
   .about-header .pages:before {
-    border-bottom-color: rgba(240,240,240,0.95);
+    border-bottom-color: rgba(220,220,220,0.95);
   }
   
   .page-link a {
@@ -216,6 +218,11 @@
     font-size: 24px;
     padding: 20px;
     transition: color 0.2s linear;
+  }
+  
+  .contact-header .page-link a,
+  .about-header .page-link a {
+    color: #333;
   }
   
   .page-link:first-child { padding-left: 0; }
@@ -242,10 +249,15 @@
     color: #fff;
   }
   
+  .contact-header .hamburger-btn > .octicon,
   .about-header .hamburger-btn > .octicon {
     color: #333;
   }
   
+  .contact-header {
+    background: rgba(255, 255, 255, 0.90);
+    border-bottom: 1px solid #ccc;
+  }
   
   /* >= Medium Screen */
   @media (min-width: 768px) {
@@ -269,6 +281,8 @@
       display:table;
       clear:both;
     }
+    
+    header.contact-header .page-link,
     header.about-header .page-link,
     header.landing-header .page-link,
     .page-link {
@@ -277,7 +291,7 @@
       display: inline;
     }
     
-    .page-link a {
+    .landing-header .page-link a {
       color: #fff;
       font-family: 'Roboto-Light';
       font-size: 24px;
@@ -285,7 +299,7 @@
       transition: color 0.2s linear;
     }
     
-    .page-link a:visited { color: #fff; }
+    .landing-header .page-link a:visited { color: #fff; }
     .page-link a:hover { color: #ee4938; }
     
     .hamburger-btn { display: none; }
@@ -945,3 +959,14 @@
           width: auto;
         }
       }
+
+/* Contact
+------------------------------------------------------------------------------*/
+  .contact.hero-wrapper {
+    background: #fff;
+    opacity: 1.0;
+  }
+  .map-canvas {
+    height: 450px;
+    width: 100%;
+  }
