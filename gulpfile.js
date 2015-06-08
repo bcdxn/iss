@@ -3,11 +3,11 @@ var gulp       = require('gulp'),
     source     = require('vinyl-source-stream'),
     browserify = require('browserify'),
     streamify  = require('gulp-streamify'),
-    concat     = require('gulp-concat'),
-    cleanCss   = require('less-plugin-clean-css'),
-    autoprefix = require('less-plugin-autoprefix'),
     rename     = require('gulp-rename'),
     watch      = require('gulp-watch'),
+    copy       = require('gulp-copy'),
+    cleanCss   = require('less-plugin-clean-css'),
+    autoprefix = require('less-plugin-autoprefix'),
     path       = {};
 
 path.LESS        = './src/less/**/*.less';
