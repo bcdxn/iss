@@ -1,16 +1,19 @@
-var gulp       = require('gulp'),
-    uglify     = require('uglify'),
-    source     = require('vinyl-source-stream'),
-    browserify = require('browserify'),
-    streamify  = require('gulp-streamify'),
-    rename     = require('gulp-rename'),
-    watch      = require('gulp-watch'),
-    copy       = require('gulp-copy'),
-    cleanCss   = require('less-plugin-clean-css'),
-    autoprefix = require('less-plugin-autoprefix'),
-    path       = {};
+var gulp             = require('gulp'),
+    // uglify           = require('uglify'),
+    source           = require('vinyl-source-stream'),
+    browserify       = require('browserify'),
+    streamify        = require('gulp-streamify'),
+    rename           = require('gulp-rename'),
+    watch            = require('gulp-watch'),
+    copy             = require('gulp-copy'),
+    less             = require('gulp-less'),
+    CleanCssPlugin   = require('less-plugin-clean-css'),
+    AutoprefixPlugin = require('less-plugin-autoprefix'),
+    cleancss         = new CleanCssPlugin({ advanced: true }),
+    autoprefix       = new AutoprefixPlugin({ browsers: ['last 2 versions'] }),
+    path             = {};
 
-path.LESS        = './src/less/**/*.less';
+path.LESS        = './src/less/index.less';
 path.JS          = './src/js/**/*.js';
 path.JS_ENTRY    = './src/js/index.js';
 path.DIST        = './dist';
@@ -21,7 +24,12 @@ path.OUT_JS_MIN  = 'bundle.min.js';
 
 // CSS
 gulp.task('css', function () {
-  
+  gulp.src(path.LESS)
+      .pipe(less({
+        plugins: [autoprefix, cleancss]
+      }))
+      .pipe(rename(path.OUT_CSS_MIN))
+      .pipe(gulp.dest(path.DIST));
 });
 
 // JS

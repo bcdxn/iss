@@ -6,6 +6,7 @@
     "browserify": "^10.2.4",
     "gulp": "^3.9.0",
     "gulp-copy": "0.0.2",
+    "gulp-less": "^3.0.3",
     "gulp-rename": "^1.2.2",
     "gulp-streamify": "0.0.5",
     "gulp-watch": "^4.2.4",
