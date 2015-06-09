@@ -1,6 +1,7 @@
 var gulp             = require('gulp'),
-    // uglify           = require('uglify'),
+    uglify           = require('gulp-uglify'),
     source           = require('vinyl-source-stream'),
+    buffer           = require('vinyl-buffer'),
     browserify       = require('browserify'),
     streamify        = require('gulp-streamify'),
     rename           = require('gulp-rename'),
@@ -34,7 +35,25 @@ gulp.task('css', function () {
 
 // JS
 gulp.task('js', function () {
+  var b = browserify({
+    entries: path.JS_ENTRY,
+    debug: true
+  });
   
+  b.bundle()
+    .pipe(source(path.OUT_JS_MIN))
+    .pipe(buffer())
+    .pipe(uglify())
+    .pipe(gulp.dest(path.DIST));
+
+  
+  // browserify(path.JS_ENTRY)
+  //   .bundle()
+  //   // .pipe(source(path.OUT_JS))
+  //   // .pipe(gulp.dest(path.DIST))
+  //   // .pipe(rename(path.OUT_JS_MIN))
+  //   .pipe(uglify())
+  //   .pipe(gulp.dest(path.OUT_JS_MIN));
 });
 
 // Watch CSS
