@@ -944,7 +944,7 @@
           }
           
            p {
-            color: #606162;
+            color: @light-gray;
             font-size: 18px;
             line-height: 1.3;
             margin-bottom: 0;
@@ -1015,7 +1015,7 @@
       font-family: @font-default;
       
       h1 {
-        color: #333;
+        color: @dark-gray;
         font-size: 26px;
         padding: 60px 20px 20px 20px;
         text-align: center;
@@ -1034,6 +1034,44 @@
         
         .call-to-action {
           margin: 0;
+        }
+      }
+    }
+    
+  /* Call Us Section
+  ------------------------------------------------------------------------------*/
+    .call-us-section {
+      background: @off-white;
+      border-bottom: 1px solid @ex-light-gray;
+      border-top: 1px solid @ex-light-gray;
+      display: table;
+      height: 350px;
+      
+      .call-us-content {
+        display: table-cell;
+        height: 100%;
+        vertical-align: middle;
+        
+        h3 {
+          color: @dark-gray;
+          font-size: 26px;
+          padding: 60px 10px 20px 10px;
+          text-align: center;
+        }
+        
+        p {
+          color: @light-gray;
+          font-size: 18px;
+          line-height: 1.3;
+          padding: 0 20px;
+          text-align: center;
+        }
+        
+        .phone-action {
+          color: @orange;
+          text-align: center;
+          
+          &:hover { color: @light-orange; }
         }
       }
     }
