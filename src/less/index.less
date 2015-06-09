@@ -151,7 +151,7 @@
             border: solid transparent;
             border-bottom-color: rgba(0,0,0,0.9);
             border-width: 8px;
-            color: #fff;
+            // color: #fff;
             content: "";
             display: block;
             max-height: 0;
@@ -203,7 +203,7 @@
         .page-link {
           background: rgba(0,0,0,0.9);
           border-bottom: 1px solid @ex-light-gray;
-          color: #fff;
+          // color: #fff;
           text-align: center;
           width: 100%;
           
@@ -228,11 +228,12 @@
           @media (min-width: @width-md) {
             background: none;
             border: none;
-            color: @light-gray;
+            // color: @light-gray;
             display: inline;
           }
           
           a {
+            color: @light-gray;
             font-family: 'Roboto-Light';
             font-size: 24px;
             padding: 20px;
@@ -240,7 +241,6 @@
             
             &:visited {
               color: #fff;
-              
               @media (min-width: @width-md) {
                 color: @light-gray;
               }
@@ -304,18 +304,22 @@
   /* Header
   ------------------------------------------------------------------------------*/
   .landing-header {
-    .page-link {
-      
-      @media (min-width: @width-md) {
+    .global-nav {
+      .page-link {
         color: #fff;
-      }
-      
-      a {        
-        &:visited, &:active {
+        
+        @media (min-width: @width-md) {
           color: #fff;
-          
-          @media (min-width: @width-md) {
+        }
+        
+        a {
+          color: #fff;
+          &:visited, &:active {
             color: #fff;
+            
+            @media (min-width: @width-md) {
+              color: #fff;
+            }
           }
         }
       }
@@ -745,7 +749,22 @@
 ------------------------------------------------------------------------------*/
   /* Header
   ------------------------------------------------------------------------------*/
-    .about-header {
+    header.about-header {
+      .global-nav {
+        .pages {
+          .page-link {
+            color: @light-gray;
+            
+            @media (min-width: @width-md) {
+              color: @light-gray;
+            }
+            
+            &:visited {
+              color: @light-gray;
+            }
+          }
+        }
+      }
       .hamburger-btn {
         .octicon {
           color: @dark-gray;
