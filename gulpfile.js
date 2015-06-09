@@ -7,7 +7,6 @@ var gulp             = require('gulp'),
     watch            = require('gulp-watch'),
     copy             = require('gulp-copy'),
     less             = require('gulp-less'),
-    concat           = require('gulp-concat'),
     CleanCssPlugin   = require('less-plugin-clean-css'),
     AutoprefixPlugin = require('less-plugin-autoprefix'),
     cleancss         = new CleanCssPlugin({ advanced: true }),
@@ -40,12 +39,12 @@ gulp.task('js', function () {
 
 // Watch CSS
 gulp.task('watchCss', function () {
-  gulp.watch(path.CSS, ['css']);
+  gulp.watch(path.LESS, ['css']);
 });
 
 // Watch JS
 gulp.task('watchJs', function () {
-  gulp.watch(path.CSS, ['js']);
+  gulp.watch(path.JS, ['js']);
 });
 
 gulp.task('default', ['css', 'js', 'watchCss', 'watchJs']);
