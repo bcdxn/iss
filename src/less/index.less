@@ -132,7 +132,11 @@
            float: left;
           }
           
-          img { width: 100%; }
+          img {
+            box-sizing: border-box;
+            height: @header-height;
+            padding: 5px 10px 15px 10px;
+          }
         }
         
         .pages {
@@ -463,13 +467,16 @@
     
     .landing-link {
       padding: 15px @padding-sm @padding-sm @padding-sm;
-      width: @header-height;
+      // width: @header-height;
       
       @media (min-width: @width-md) {
        float: left;
       }
       
-      img { width: 100%; }
+      img {
+        padding: 0 10px 10px 10px;
+        height: @header-height;
+      }
       
       
     }
@@ -1094,7 +1101,6 @@
   ------------------------------------------------------------------------------*/
     .call-us-section {
       background: @off-white;
-      border-bottom: 1px solid @ex-light-gray;
       border-top: 1px solid @ex-light-gray;
       display: table;
       height: 350px;
@@ -1128,6 +1134,92 @@
           text-align: center;
           
           &:hover { color: @light-orange; }
+        }
+      }
+    }
+
+/* Work
+------------------------------------------------------------------------------*/
+  /* Header
+  ------------------------------------------------------------------------------*/
+    header.contact-header {
+      .global-nav {
+        .pages {
+          .page-link {
+            color: @light-gray;
+            
+            @media (min-width: @width-md) {
+              color: @light-gray;
+            }
+            
+            &:visited {
+              color: @light-gray;
+            }
+          }
+        }
+      }
+      .hamburger-btn {
+        .octicon {
+          color: @dark-gray;
+        }
+      }
+    }
+    
+  /* Hero
+  ------------------------------------------------------------------------------*/  
+    .contact.hero-wrapper {
+      background: #fff;
+      opacity: 1.0;
+      
+      .contact.hero-img-wrapper {
+        display: table;
+        height: 500px;
+        width: 100%;
+        
+        .contact.hero-img {
+          display: table-cell;
+          height: 100%;
+          vertical-align: middle;
+          
+          img {
+            margin: auto;
+            max-width: 390px;
+            width: 100%;
+          }
+        }
+      }
+    }
+  
+  /* Work Items Section
+  ------------------------------------------------------------------------------*/  
+    .work-items {
+      margin: auto;
+      max-width: @width-lg;
+      
+      .work-item {
+        position: relative;
+        
+        img {
+          position: relative;
+          width: 100%;
+          z-index: 2;
+        }
+        
+        .work-item-text-wrapper {
+          background: rgba(0, 0, 0, 0.8);
+          bottom: 0px;
+          color: #fff;
+          left: 15px;
+          padding: 10px 0;
+          position: absolute;
+          right: 15px;
+          z-index: 3;
+          
+          h3 {
+            font-size: 18px;
+            line-height: 25px;
+            text-align: center;
+          }
         }
       }
     }
