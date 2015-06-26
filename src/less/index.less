@@ -1193,32 +1193,54 @@
   /* Work Items Section
   ------------------------------------------------------------------------------*/  
     .work-items {
+      border-bottom: 1px solid @ex-light-gray;
       margin: auto;
       max-width: @width-lg;
       
+      &:last-child {
+        border: none;
+        padding-bottom: 60px;
+      }
+      
       .work-item {
-        position: relative;
+        border-right: 1px solid @ex-light-gray;
+        display: table;
+        height: 300px;
         
-        img {
-          position: relative;
-          width: 100%;
-          z-index: 2;
+        &:last-child {
+          border: none;
         }
         
-        .work-item-text-wrapper {
-          background: rgba(0, 0, 0, 0.8);
-          bottom: 0px;
-          color: #fff;
-          left: 15px;
-          padding: 10px 0;
-          position: absolute;
-          right: 15px;
-          z-index: 3;
+        .work-item-middle {
+          display: table-cell;
+          vertical-align: middle;
           
-          h3 {
-            font-size: 18px;
-            line-height: 25px;
-            text-align: center;
+          .work-item-inner {
+            width: 100%;
+            
+            img {
+              display: block;
+              margin: auto;
+              width: 50%;
+            }
+            
+            h3 {
+              color: @dark-gray;
+              font-family: "Roboto Condensed",  @font-default;
+              font-size: 26px;
+              font-weight: bold;
+              padding: 20px 0 10px 0;
+              text-align: center;
+              text-transform: uppercase;
+            }
+            
+            h4 {
+              color: @light-gray;
+              font-family: "Roboto Slab", georgia;
+              font-style: italic;
+              letter-spacing: 0.01em;
+              text-align: center;
+            }
           }
         }
       }
