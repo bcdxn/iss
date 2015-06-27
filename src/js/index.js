@@ -1,9 +1,8 @@
-/// <reference path="../typings/jquery/jquery.d.ts"/>
-
 'use strict';
 
 var LandingHero = require('./landing-hero'),
-    Header      = require('./header');
+    Header      = require('./header'),
+    WorkItem    = require('./work-item');
 
 $(document).ready(function () {
   var map, marker, latLng;
@@ -60,6 +59,11 @@ $(document).ready(function () {
       map: map,
       title: 'Innovative Sign Systems'
     });
+  }
+  
+  // Work Page
+  if ($('.work-item-detail').length > 0) {
+    WorkItem.init();
   }
 
 }); 
