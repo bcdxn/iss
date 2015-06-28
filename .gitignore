@@ -9,3 +9,6 @@
 
 # Something keeps adding Thumbs.db... stahp
 **/Thumbs.db
+
+# Don't personal to-dos
+**/to-do.md
