@@ -48,7 +48,8 @@ $(document).ready(function () {
   
   // Contact Page
   if ($('#map-canvas').length > 0) {
-    latLng = { lat: 35.773853, lng: -78.637281}
+    latLng = { lat: 35.773853, lng: -78.637281};
+    
     map = new google.maps.Map(document.getElementById('map-canvas'), {
       center: latLng,
       zoom: 17
@@ -58,6 +59,10 @@ $(document).ready(function () {
       position: latLng,
       map: map,
       title: 'Innovative Sign Systems'
+    });
+    
+    $(window).on('resize', function () {
+      map.setCenter(latLng)
     });
   }
   

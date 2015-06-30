@@ -120,6 +120,11 @@
     overflow: hidden;
     width: 100%;
   }
+  
+  .animated { 
+    animation-duration: 1s; 
+    animation-fill-mode: both; 
+  }
 
 
   
@@ -1082,13 +1087,53 @@
       background: #fff;
       height: 500px;
       opacity: 1.0;
+      position: relative;
       
       .map-canvas {
         border-bottom: 1px solid @ex-light-gray;
         height: 500px;
         width: 100%;
       }
+      
+      .map-info-window {
+        background: rgba(238, 73, 56, 0.9);
+        bottom: 0;
+        color: #fff;
+        cursor: pointer;
+        font-family: @font-default;
+        font-size: 18px;
+        padding: 10px;
+        position: absolute;
+        width: 100%;
+        
+        &:hover {
+          background: rgba(238, 73, 56, 0.75);
+          text-decoration: underline;
+        }
+        
+        @media (min-width: @width-md) {
+          bottom: auto;
+          height: 100px;
+          left: 50%;
+          top: 50%;
+          transform: translate(25%,-60%);
+          width: 230px;
+        }
+        
+        em { font-weight: bold; }
+      }
     }
+    
+    @keyframes fadeIn {
+      0% {opacity: 0;}
+      100% {opacity: 1;}
+    }
+    
+    .fadeIn {
+      animation-name: fadeIn;
+    }
+
+
   /* Form Section
   ------------------------------------------------------------------------------*/
     .form-section {
@@ -1364,13 +1409,7 @@
           }
         }
       }
-    }
-      
-    .animated { 
-      animation-duration: 1s; 
-      animation-fill-mode: both; 
-    } 
-  
+    }  
     
     @keyframes bounceIn {
       0%, 20%, 40%, 60%, 80%, 100% {
