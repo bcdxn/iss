@@ -62,8 +62,21 @@ $(document).ready(function () {
     });
     
     $(window).on('resize', function () {
-      map.setCenter(latLng)
+      map.setCenter(latLng);
     });
+    
+    window.mailToIss = function (evt) {
+      var fullName    = encodeURIComponent($('#fullName').val()),
+          description = encodeURIComponent($('#description').val()),
+          email       = encodeURIComponent($('#email').val()),
+          orgName     = encodeURIComponent($('#orgName').val()),
+          subject     =  'Innovative Sign Systems: ' + fullName + ' requesting more information',
+          body        = description + '%0A%0A- ' + fullName +
+                        '%0A' + email + '%0A' + orgName;
+      window.location.href = "mailto:test@test.com?subject=" + subject + "&body=" + body;
+      // evt.preventDefault();
+      return false;
+    };
   }
   
   // Work Page
