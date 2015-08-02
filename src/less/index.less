@@ -365,19 +365,28 @@
           background: #ddd;
           border-top: 1px solid @ex-light-gray;
           margin-top: @margin-lg;
-          padding-bottom: @padding-lg;
           padding-top: @padding-lg;
           text-align: center;
+          
           @media (min-width: @width-md) {
             background: none;
             border-left: 1px solid @ex-light-gray;
             border-top: none;
-            margin-bottom: 26px;
             margin-top: 0;
-            padding-bottom: 0;
             padding-top: 0;
             text-align: left;
           }
+        }
+      }
+      
+      .footer-email {
+        background: #ddd;
+        padding-bottom: @padding-lg;
+        padding-top: @padding-lg;
+        text-align: center;
+        
+        @media (min-width: @width-md) {
+          background: none;
         }
       }
     }
