@@ -92,6 +92,13 @@
     text-align: center;
     text-shadow: 0px 1px 10px rgba(0,0,0,1)
   }
+  
+  .logo-wrapper {
+    margin: auto;
+    background: red;
+    max-width: 420px;
+    width: 100%;
+  }
 
   .hero-logo img {
     margin: auto;

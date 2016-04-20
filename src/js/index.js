@@ -73,7 +73,7 @@ $(document).ready(function () {
           subject     =  'Innovative Sign Systems: ' + fullName + ' requesting more information',
           body        = description + '%0A%0A- ' + fullName +
                         '%0A' + email + '%0A' + orgName;
-      window.location.href = "mailto:test@test.com?subject=" + subject + "&body=" + body;
+      window.location.href = "mailto:rich_innovative@bellsouth.net?subject=" + subject + "&body=" + body;
       // evt.preventDefault();
       return false;
     };
